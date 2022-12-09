@@ -73,6 +73,12 @@ public class CCloudMetricsSourceTask extends SourceTask {
 
     @Override
     public List<SourceRecord> poll() throws InterruptedException {
+        try {
+            log.debug("CCloudMetricsConnector task sleep for " + interval);
+            Thread.sleep(interval);
+        } catch (InterruptedException e) {
+            return null;
+        }
         LinkedList<SourceRecord> returnList = new LinkedList<>();
         try {
             HttpClient client = HttpClient.newHttpClient();
@@ -96,12 +102,6 @@ public class CCloudMetricsSourceTask extends SourceTask {
             }
         } catch (IOException e) {
             log.warn("CCloudMetricsConnector encountered IOException: " + e.getMessage());
-        }
-        try {
-            log.debug("CCloudMetricsConnector task sleep for " + interval);
-            Thread.sleep(interval);
-        } catch (InterruptedException e) {
-            return null;
         }
         return returnList;
     }
