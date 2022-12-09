@@ -16,14 +16,14 @@ public class CCloudMetricsConnectorConfig extends AbstractConfig {
     public static final String TOPIC_CONFIG_CONF = "topic";
     public static final String TOPIC_CONFIG_DOC = "The topic to publish data to.";
     public static final String POLL_INTERVAL_CONF = "poll.interval";
-    public static final String POLL_INTERVAL_DOC = "poll.interval";
+    public static final String POLL_INTERVAL_DOC = "The time, in milliseconds, to sleep between calls to the Confluent Cloud Metrics endpoint. Should not be less than 60000 or it will trigger rate limits";
     public static final long POLL_INTERVAL_DEFAULT_VALUE = 60000;
     public static final String RESOURCE_ID_CONF = "resource.kafka.id";
-    public static final String RESOURCE_ID_DOC = "resource.kafka.id";
+    public static final String RESOURCE_ID_DOC = "The resources to export metrics for. Currently only Confluent Cloud Clusters are supported";
     public static final String API_KEY_CONF = "ccloud.api.key";
-    public static final String API_KEY_DOC = "ccloud.api.key";
+    public static final String API_KEY_DOC = "An API Key assigned to a principal with the MetricsViewer role";
     public static final String API_SECRET_CONF = "ccloud.api.secret";
-    public static final String API_SECRET_DOC = "ccloud.api.secret";
+    public static final String API_SECRET_DOC = "The secret for the API Key";
     static final String RESOURCE_PREFIX = "lkc";
 
     public CCloudMetricsConnectorConfig(ConfigDef definition, Map<String, String> originals) {
