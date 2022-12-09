@@ -97,13 +97,14 @@ public class CCloudMetricsSourceTask extends SourceTask {
                         , topic, null, Schema.STRING_SCHEMA, response.body());
 
                 returnList.add(returnRecord);
+                return returnList;
             } else {
                 log.warn("Confluent Cloud Metrics API responded with HTTP Code: " + response.statusCode());
             }
         } catch (IOException e) {
             log.warn("CCloudMetricsConnector encountered IOException: " + e.getMessage());
         }
-        return returnList;
+        return null;
     }
 
     @Override
