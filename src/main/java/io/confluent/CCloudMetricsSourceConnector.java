@@ -88,16 +88,6 @@ public class CCloudMetricsSourceConnector extends SourceConnector {
         } catch (ConfigException e) {
             return config;
         }
-//
-//        for (ConfigValue v : config.configValues()) {
-//
-//        }
-
-//        try {
-//            ConfigValue tasksMax  =  config.configValues().stream().filter(v -> v.name().equals("tasks.max")).findFirst().orElseThrow();
-//            if ((int)tasksMax.value() > this.config.getResourceIds().size()) tasksMax.addErrorMessage("Cannot define more tasks than resources for metrics fetch");
-//
-//        }
 
         return config;
     }
