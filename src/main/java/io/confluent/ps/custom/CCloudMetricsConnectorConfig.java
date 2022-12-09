@@ -1,4 +1,4 @@
-package io.confluent;
+package io.confluent.ps.custom;
 
 import org.apache.kafka.common.config.AbstractConfig;
 import org.apache.kafka.common.config.ConfigDef;

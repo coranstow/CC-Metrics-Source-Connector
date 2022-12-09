@@ -1,4 +1,4 @@
-package io.confluent;
+package io.confluent.ps.custom;
 
 
 import org.apache.kafka.common.utils.AppInfoParser;
